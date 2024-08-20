@@ -22,8 +22,8 @@ Larger models require more computational power but an embedded systems can only 
 * Model Compression: Knowledge Distillation - Only keep the most critical pieces of information to produce our results.
 * Reducing Runtimes: Making inferences from our pre-made model instead of learning from new data
 
-## Basic Machine Learning
-Using supervised machine learning we use labeled data to train models that learn patterns or rules. These models are then used to make predictions or generate probabilities when presented with new, unseen data.
+## Linear Regression
+Using linear regression we use labeled data to train models that learn patterns or rules. These models are then used to make predictions when presented with new, unseen data.
 
 To evaluate how well our model is performing, we calculate the Mean Squared Error (MSE). This involves taking the average of the squared differences between the model's predicted values (Y) and the actual values (Y'). A lower MSE indicates that our model's predictions are closer to the real data, meaning the model is performing better. Check out this [example](mse.ipynb).
 
@@ -61,3 +61,16 @@ If you have multiple layers like this:
 ![image](./images/nn.jpg)
 
 Now your neural network takes in two inputs and spits out a single output. An important thing to note is that if a neuron takes in two or more inputs, it has to be trained on the equal number of weights. There is always one bias, that doesen't change. Here is an example of a [example](multi-layer-neural-network.ipynb) of a multi-layer neural network performing linear regression.
+
+## Classification
+In classification, we basically predict categories instead of values like we did in linear regression. We saw that we could use a neural network to perform linear regression. But, we could also use it to perform classification. In this case, our neural network will have several outputs. 
+
+Say we are trying to classify if a hand-written digits 0 through 9. Then our neural network would have 10 outputs, each of which correspond to the numbers 0 through 9 respectively. Then classifying a say a 5 would give an output of probabilities that might looks like this [0.001 0.00001 0.00004 0.0001 0.003 0.9998 0.0001 0.00009 0.00004 0.00001]. Our inputs would be the number of pixels in your canvas (or image). Here is an [example](dnn.ipynb).
+
+
+## Splitting Datasets
+Normally, you'll run into things like training data, validation data, and test data: 
+* Training data is used to train your neural network (finding the appropriate weights and biases).
+* Validation data is used to measure how well your neural network has been trained after each epoch (step) with unseen data. This is crucial to ensure your neural network does not over specialize on your training data. And, ideally, you want your training accuracy to be as close to your validation accuracy. The lower your validation accuracy, it probably means that your network is over specializing on your training set. 
+  * NOTE: It is not used to find the appropriate weights and biases for your neural network. It's just something to check whether your network is on the right path or not.
+* Test data is the clean set to just test your network.
