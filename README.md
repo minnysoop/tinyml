@@ -23,7 +23,34 @@ Larger models require more computational power but an embedded systems can only 
 * Reducing Runtimes: Making inferences from our pre-made model instead of learning from new data
 
 ## Basic Machine Learning
-* Machine Learning Paradigm: Labeled data is used to create a set of rules (models) that are used to generate inferences (probabilities) from future data.
-* Measuring loss in our model via Mean Squared Error (MSE): Take the average of the squared differences between Y (model generated output) and Y' (real output). The lower the error, the better our model. Check out a [code sample](mse.ipynb).
-* Minimizing loss in our model via Gradient Descent: Imagine plotting our loss function. The y-axis would be the error from our loss function (i.e. MSE) and our x-axis would be one of our parameters. If you have more than one parameter, you would have several axes. You want to get the minimum point in that graph. Gradient descent allows us to adjust our parameters via a learning rate in order to reach that minimum. Too large or too small of a learning rate may result in never reaching a minimum. Check out a [code sample](gradient-descent.ipynb).
-* As our data becomes more complex, a simple mathematical model may not be enough to capture these complicated patterns. So, we can use a neural network. Neural networks consists of neurons that have their 'own' little model that generates an output from provided parameters. These little models are called neurons. Here is an [example](neural-network.ipynb) of a single neuron that performs linear regression. We can have a lot of these neurons working together (an output of one neuron can be an input to another neuron). 
+Using supervised machine learning we use labeled data to train models that learn patterns or rules. These models are then used to make predictions or generate probabilities when presented with new, unseen data.
+
+To evaluate how well our model is performing, we calculate the Mean Squared Error (MSE). This involves taking the average of the squared differences between the model's predicted values (Y) and the actual values (Y'). A lower MSE indicates that our model's predictions are closer to the real data, meaning the model is performing better. Check out this [example](mse.ipynb).
+
+Now, imagine you have a graph called $L$ where the y-axis represents the error (MSE's output in this case), and the x-axis represents one of the parameters in your model (like a weight). If your model has multiple parameters, you'd have more axes, but visualizing it becomes tough.
+
+Your goal is to find the minimum/lowest point on $L$. This point represents the best parameter value that minimizes the error. The method for doing so is called gradient descent. We iteratively update every weight and bias in our model by starting with an initial weight $\theta_t$ and a learning rate $\alpha$ with the following formula:
+
+$$
+\theta_{t+1} = \theta_t - \alpha \nabla L(\theta_t)
+$$
+
+From calculus, we know that to get the minimum point on $L$, we take it's first derivative $\nabla L(\theta_t)$, set it to 0, find the $\theta_t$s that make it 0, and check if they're minimums. Luckily, $L$ is shaped like a parabola, so finding the minimum is pretty straightforward.
+
+Since $\nabla L(\theta_t)$ represents how **fast** the error is changing at $\theta_t$. This information helps us adjust the current $\theta_t$ to improve the model. 
+
+- **If $\nabla L(\theta_t)$ is positive:** This means that the loss function is increasing. So, we should reduce $\theta_t$ to get closer to the minimum. This is done by subtracting $\alpha \nabla L(\theta_t)$ from $\theta_t$. Since $\nabla L(\theta_t)$ is positive, subtracting this term decreases $\theta_t$.
+
+- **If $\nabla L(\theta_t)$ is negative:** This means the loss function is decreasing. So, we increase $\theta_t$ to get closer to the minimum. Since $\nabla L(\theta_t)$ is negative, subtracting a negative value (which is equivalent to adding a positive value) increases $\theta_t$.
+
+Check out a [code sample](gradient-descent.ipynb).
+
+
+## Basic Neural Networks
+As data becomes more complex, simple mathematical models like linear regression may not be sufficient to capture intricate patterns. In such cases, more sophisticated models like neural networks can be used.
+
+A neural network is composed of units called neurons. Each neuron takes a set of inputs, processes them, and generates a single output. This output can then be passed on as an input to other neurons in a neural network.
+
+When you train a neural network, you adjust the parameters of each indivudal neurons (often called weights and biases) so that the network's output approximates the desired outcome.
+
+Here is an [example](neural-network.ipynb) of a single neuron performing linear regression.
