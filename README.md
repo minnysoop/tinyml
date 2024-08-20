@@ -46,7 +46,7 @@ Since $\nabla L(\theta_t)$ represents how **fast** the error is changing at $\th
 Check out a [code sample](gradient-descent.ipynb).
 
 
-## Basic Neural Networks
+## Neural Networks
 As data becomes more complex, simple mathematical models like linear regression may not be sufficient to capture intricate patterns. In such cases, more sophisticated models like neural networks can be used.
 
 A neural network is composed of units called neurons. Each neuron takes a set of inputs, processes them, and generates a single output. This output can then be passed on as an input to other neurons in a neural network.
@@ -67,10 +67,14 @@ In classification, we basically predict categories instead of values like we did
 
 Say we are trying to classify if a hand-written digits 0 through 9. Then our neural network would have 10 outputs, each of which correspond to the numbers 0 through 9 respectively. Then classifying a say a 5 would give an output of probabilities that might looks like this [0.001 0.00001 0.00004 0.0001 0.003 0.9998 0.0001 0.00009 0.00004 0.00001]. Our inputs would be the number of pixels in your canvas (or image). Here is an [example](dnn.ipynb).
 
-
 ## Splitting Datasets
 Normally, you'll run into things like training data, validation data, and test data: 
 * Training data is used to train your neural network (finding the appropriate weights and biases).
 * Validation data is used to measure how well your neural network has been trained after each epoch (step) with unseen data. This is crucial to ensure your neural network does not over specialize on your training data. And, ideally, you want your training accuracy to be as close to your validation accuracy. The lower your validation accuracy, it probably means that your network is over specializing on your training set. 
   * NOTE: It is not used to find the appropriate weights and biases for your neural network. It's just something to check whether your network is on the right path or not.
 * Test data is the clean set to just test your network.
+
+## Convolutional Neural Networks (CNNs)
+Commonly used in computer vision applications, CNNs are basically neural networks that have convolutional layers that performs convolutions before going into your dense layers. Convolutions are basically an operation where we scan every pixel and multiply each pixel by weights in our filter. After a convolution is applied, we get this thing called a feature map. 
+
+CNNs combined with pooling, which aims to compress the image but keep the important features, it makes working with images more efficient. One type of pooling called MAX pooling involves looking at it's neighbors and taking the maximum value. Check out this [example](./convolutions.ipynb).
