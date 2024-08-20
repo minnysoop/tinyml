@@ -54,3 +54,10 @@ A neural network is composed of units called neurons. Each neuron takes a set of
 When you train a neural network, you adjust the parameters of each indivudal neurons (often called weights and biases) so that the network's output approximates the desired outcome.
 
 Here is an [example](neural-network.ipynb) of a single neuron performing linear regression.
+
+## Multi-layer Neural Network
+If you have multiple layers like this:
+
+![image](./images/nn.jpg)
+
+Now your neural network takes in two inputs and spits out a single output. An important thing to note is that if a neuron takes in two or more inputs, it has to be trained on the equal number of weights. There is always one bias, that doesen't change. Here is an example of a [example](multi-layer-neural-network.ipynb) of a multi-layer neural network performing linear regression.
