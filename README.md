@@ -35,7 +35,7 @@ $$
 \theta_{t+1} = \theta_t - \alpha \nabla L(\theta_t)
 $$
 
-From calculus, we know that to get the minimum point on $L$, we take it's first derivative $\nabla L(\theta_t)$, set it to 0, find the $\theta_t$s that make it 0, and check if they're minimums. Luckily, $L$ is shaped like a parabola, so finding the minimum is pretty straightforward.
+From calculus, we know that to get the minimum point on $L$, we take it's first derivative $\nabla L(\theta_t)$, set it to 0, find the $\theta_t$ that make it 0, and check if they're minimums. Luckily, $L$ is shaped like a parabola, so finding the minimum is pretty straightforward.
 
 Since $\nabla L(\theta_t)$ represents how **fast** the error is changing at $\theta_t$. This information helps us adjust the current $\theta_t$ to improve the model. 
 
