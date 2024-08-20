@@ -39,7 +39,7 @@ From calculus, we know that to get the minimum point on $L$, we take it's first 
 
 Since $\nabla L(\theta_t)$ represents how **fast** the error is changing at $\theta_t$. This information helps us adjust the current $\theta_t$ to improve the model. 
 
-- **If $\nabla L(\theta_t)$ is positive:** This means that the loss function is increasing. If you drew a vertical line to symmetrically cut the parabola in half, we'd be on the right side of the line. So, we should reduce $\theta_t$ to get closer to the minimum. This is done by subtracting $\alpha \nabla L(\theta_t)$ from $\theta_t$. Since $\nabla L(\theta_t)$ is positive, subtracting this term decreases $\theta_t$.
+- **If $\nabla L(\theta_t)$ is positive:** This means that the loss function is increasing. If you drew a vertical line to symmetrically cut the parabola in half, we'd be on the right side of the line. So, we should reduce $\theta_t$ to get closer to the minimum. This is done by subtracting $\alpha \nabla L(\theta_t)$ from $\theta_t$.
 
 - **If $\nabla L(\theta_t)$ is negative:** This means the loss function is decreasing. If you drew a vertical line to symmetrically cut the parabola in half, we'd be on the left side of the line. So, we increase $\theta_t$ to get closer to the minimum. Since $\nabla L(\theta_t)$ is negative, subtracting a negative value (which is equivalent to adding a positive value) increases $\theta_t$.
 
