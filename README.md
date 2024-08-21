@@ -111,3 +111,6 @@ This is basically everything above but represented concisely.
 6. Convert the model for a microcontroller
 7. Deploy model
 8. Make inferences
+
+## Developing Models for Microcontrollers
+After building and training a model then we use tools provided by TensorFlow to convert the model to a sutiable format that can be ran on a microcontroller. Conversion involves pruning and quantization. Here is an [example](./tflite-convert.ipynb) on how that works.
