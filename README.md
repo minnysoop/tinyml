@@ -102,7 +102,7 @@ CNNs combined with pooling, which aims to compress the image but keep the import
   * Find areas for improvements
 
 ## TinyML Workflow
-This is basically everything above but min a more concise fashion.
+This is basically everything above but represented concisely.
 1. Collect data
 2. Preprocess data
 3. Design a model
