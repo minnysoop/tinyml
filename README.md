@@ -78,3 +78,36 @@ Normally, you'll run into things like training data, validation data, and test d
 Commonly used in computer vision applications, CNNs are basically neural networks that have convolutional layers that performs convolutions before going into your dense layers. Convolutions are basically an operation where we scan every pixel and multiply each pixel by weights in our filter. After a convolution is applied, we get this thing called a feature map. 
 
 CNNs combined with pooling, which aims to compress the image but keep the important features, it makes working with images more efficient. One type of pooling called MAX pooling involves looking at it's neighbors and taking the maximum value. Check out this [example](./convolutions.ipynb).
+
+## AI Infrastructure
+* Data Engineering: 
+  * Fulfilling data requirements
+  * Collecting and labelling data
+  * Inspecting and cleaning the data
+  * Preparing data for training
+  * Augment the data: Transforming existing data for new data 
+* Model Engineering:
+  * Training ML models
+  * Improving training speed
+  * Setting target metrics
+  * Evaluate the model against the metrics
+  * Optimize the model to meet target metrics
+* Model Deployment:
+  * Putting the model onto a device
+  * Optimize performance and energy
+  * Engineering security and privacy
+  * Improving inferences and fine-tuning the model
+* Product Analytics:
+  * Dashboards to evalutate how the device does with field data
+  * Find areas for improvements
+
+## TinyML Workflow
+This is basically everything above but min a more concise fashion.
+1. Collect data
+2. Preprocess data
+3. Design a model
+4. Train a model
+5. Evaluate and optimize the model
+6. Convert the model for a microcontroller
+7. Deploy model
+8. Make inferences
