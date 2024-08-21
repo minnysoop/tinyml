@@ -114,3 +114,10 @@ This is basically everything above but represented concisely.
 
 ## Developing Models for Microcontrollers
 After building and training a model then we use tools provided by TensorFlow to convert the model to a sutiable format that can be ran on a microcontroller. Conversion involves pruning and quantization. Here is an [example](./tflite-convert.ipynb) on how that works.
+
+## Optimization via Quantization
+Quantization is important because we can reduce some precision (32-bit floats to 8-bit integers) to get more storage, speed, and portability.
+
+Tensorflow has a lot of built-in APIs to help optimize and fine-tune your models. An example of this is quantization. You can quantize your model before and after training as well as after you convert it into a TFLite model.
+
+You can actually quantize different types of parts of the neural networks. So, you can quantize weights, biases, activations, tensors, etc. If you plot all the weights as a histrogram, quantization aims to discretize that graph but still maintain that same pattern. It's done by getting the range of weights and mapping each value to one of the numbers in the range of 8-bit integers (0-255). Now when we store weights, we store them as 8-bit integers. However, when we're using the weights for inference, we decompress the weights by converting them back into a floating point value. But, you can also quantize the inputs and just use the stored integer weights on them too!
