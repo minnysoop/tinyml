@@ -1,6 +1,6 @@
-# TinyML
+# TinyML1
 
-This course is part of the Verizon Skill Forward program. Thank you to Verizon for providing the full course experience for self-learners like me.
+This course was taken as part of the Verizon Skill Forward program. Thank you to Verizon for providing the full course experience for self-learners like me.
 
 ## Introduction
 * TinyML is concerned with creating intelligent systems on microcontrollers.
